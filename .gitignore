@@ -1,1 +1,4 @@
+# all the node dependency
 node_modules/
+# ignoring the keys
+config/keys.js
