@@ -6,6 +6,7 @@ const methodOverrirde = require('method-override');
 const passport = require('passport');
 const authRoutes = require('./routes/auth-routes');
 const passportSetup = require('./config/passport-setup');
+const keys = require('./config/keys');
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine','ejs');
@@ -15,7 +16,7 @@ mongoose.connect('mongodb://localhost:27017/secondhand',{useNewUrlParser:true,us
 
 //Passport configuration
 app.use(require('express-session')({
-    secret:"I love you",
+    secret:keys.session.secret,
     resave:false,
     saveUninitialized:false
 }));
