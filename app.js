@@ -11,8 +11,9 @@ app.use(express.static(__dirname + "/public"));
 
 mongoose.connect('mongodb://localhost:27017/secondhand',{useNewUrlParser:true,useUnifiedTopology:true});
 
+//homepage route
 app.get('/',(req,res)=>{
-    res.send('hi there !!');
+    res.render('homepage')
 })
 
 
