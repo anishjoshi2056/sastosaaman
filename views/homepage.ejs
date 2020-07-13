@@ -11,11 +11,15 @@
 </head>
 <body>
     <header>
-        <h2><a href="#">Sasto Saamaan</a></h2>
+        <h2><a href="#"><i class="fas fa-store"></i> Sasto Saamaan</a></h2>
         <nav>
             <li><a href="#">Saamaan</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <%if(currentUser) { %>
+                <li><a href="/auth/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+            <%}else {%>
+                <li><a href="/auth/google"><i class="fa fa-google" aria-hidden="true"></i> Login</a></li>
+            <%}%>
         </nav>
     </header>
     <section class="hero">
@@ -23,7 +27,7 @@
         <div class="hero-content-area">
             <h1><i class="fas fa-shopping-cart"></i> Sasto Saamaan</h1>
             <h3>Sell your items - to feel free</h3>
-            <a href="/items" class="btn">Get Started</a>
+            <a href="#" class="btn">Get Started</a>
         </div>
     </section>
 </body>
