@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap" rel="stylesheet">
+<%-include('../partials/header')%>
     <link rel="stylesheet" href="/stylesheets/index.css">
-    <script src="https://kit.fontawesome.com/3e24ebc4ee.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <h2><a href="/"><i class="fas fa-store"></i> Sasto Saamaan</a></h2>
-        <nav>
-            <li><a href="#">Saamaan</a></li>
-            <li><a href="#">About</a></li>
-            <%if(currentUser) { %>
-                <li><a href="/auth/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
-            <%}else {%>
-                <li><a href="/auth/google"><i class="fa fa-google" aria-hidden="true"></i> Login</a></li>
-            <%}%>
-        </nav>
-    </header>
+    <!-- for navbar -->
+    <!-- <header> -->
+        <%-include('../partials/navbar')%>
+    <!-- </header> -->
     <section class="hero">
         <div class="background-image"></div>
         <!-- <div class="hero-content-area">

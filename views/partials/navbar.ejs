@@ -1,0 +1,12 @@
+<header>
+    <h2><a href="#"><i class="fas fa-store"></i> Sasto Saamaan</a></h2>
+            <nav>
+                <li><a href="#">Saamaan</a></li>
+                <li><a href="#">About</a></li>
+                <%if(currentUser) { %>
+                    <li><a href="/auth/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                <%}else {%>
+                    <li><a href="/auth/google"><i class="fa fa-google" aria-hidden="true"></i> Login</a></li>
+                <%}%>
+            </nav>
+</header>
