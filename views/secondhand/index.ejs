@@ -1,34 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap" rel="stylesheet">
+<%-include('../partials/header')%>
     <link rel="stylesheet" href="/stylesheets/index.css">
-    <script src="https://kit.fontawesome.com/3e24ebc4ee.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <h2><a href="/"><i class="fas fa-store"></i> Sasto Saamaan</a></h2>
-        <nav>
-            <li><a href="#">Saamaan</a></li>
-            <li><a href="#">About</a></li>
-            <%if(currentUser) { %>
-                <li><a href="/auth/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
-            <%}else {%>
-                <li><a href="/auth/google"><i class="fa fa-google" aria-hidden="true"></i> Login</a></li>
-            <%}%>
-        </nav>
-    </header>
-    <section class="hero">
-        <div class="background-image"></div>
-        <!-- <div class="hero-content-area">
-            <h1><i class="fas fa-shopping-cart"></i> Sasto Saamaan</h1>
-            <h3>Sell your items - to feel free</h3>
-            <a href="/items" class="btn">Get Started</a>
-        </div> -->
-    </section>
+    <!-- for navbar -->
+    <!-- <header> -->
+        <%-include('../partials/navbar')%>
+    <!-- </header> -->
+        <section class="section-tours" id="section-tours">
+            <div class="u-center-text u-margin-bottom-big">
+                <h2 class="heading-secondary">
+                    Most popular Saamaans
+                </h2>
+            </div>
+    
+            <div class="row">
+            <% Saamaans.forEach(function(eachsaamaan){%>
+                <div class="col-1-of-3">
+                   <div class="card">
+                       <div class="card__side card__side--front">
+                            <div class="card__picture card__picture--1">
+                                &nbsp;
+                            </div>
+                            <h4 class="card__heading">
+                                <span class="card__heading-span card__heading-span--1"><%=eachsaamaan.name%></span>
+                            </h4>
+                            <div class="card__details">
+                                <ul>
+                                    <li>3 day tours</li>
+                                    <li>Up to 30 people</li>
+                                    <li>2 tour guides</li>
+                                    <li>Sleep in cozy hotels</li>
+                                    <li>Difficulty: easy</li>
+                                </ul>
+                            </div>
+                       </div>
+                       <div class="card__side card__side--back card__side--back-1">
+                            <div class="card__cta">
+                                <div class="card__price-box">
+                                    <p class="card__price-only">Only</p>
+                                    <p class="card__price-value">$297</p>
+                                </div>
+                                <a href="#popup" class="btn btn--white">Buy now!</a>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+            <% })%>
+            </div>
+        </section>
 </body>
 </html>
