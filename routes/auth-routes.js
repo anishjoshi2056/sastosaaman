@@ -7,7 +7,8 @@ router.get('/google',passport.authenticate('google',{
 }))
 //google redirect
 router.get('/google/redirect',passport.authenticate('google'),function(req,res) {
-    res.redirect('/items');
+    //redirecting the url
+    res.redirect('/saamaan');
 })
 router.get('/logout',function(req,res){
     req.logOut();
