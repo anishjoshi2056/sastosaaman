@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 var saamaanSchema = new mongoose.Schema({
     name:String,
     img:String,
-    desc:String,
+    desc:Array,
+    price:Number,
     author:{
         id:{
             type:mongoose.Schema.Types.ObjectId,
