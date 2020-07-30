@@ -16,7 +16,8 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  background-color:  #80a3db;
+  background-color: #267FF9;
+  /* background-color:  #80a3db; */
   padding: 0.5rem; }
 
 /* for navbar */
@@ -160,10 +161,6 @@ header nav li {
 	  transform: rotateY(180deg); }
       .card__side--back-1 {
         background-image: linear-gradient(to right bottom, #2998ff, #5643fa) }
-      .card__side--back-2 {
-        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
-      .card__side--back-3 {
-        background-image: linear-gradient(to right bottom, #2998ff, #5643fa) }
   .card:hover .card__side--front {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
@@ -177,7 +174,7 @@ header nav li {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px; }
     .card__picture--1 {
-      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-5.jpg); }
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(./img/nepal.jpg); }
     .card__picture--2 {
       background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg); }
     .card__picture--3 {
@@ -261,6 +258,6 @@ header nav li {
 
 
 .section-tours {
-	background-color:  #80a3db;
+	background-color: #267FF9;
   padding: 25rem 0 15rem 0;
   margin-top: -10rem; }
