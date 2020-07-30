@@ -1,0 +1,56 @@
+<%-include('../partials/header')%>
+<link rel="stylesheet" href="/stylesheets/show.css">
+</head>
+<body>
+     <!-- for navbar -->
+    <!-- <header> -->
+        <%-include('../partials/navbar')%>
+    <!-- </header> -->
+  <!-- </header> -->
+</div>
+  <section class="section-tours" id="section-tours">
+    <div class="u-center-text u-margin-bottom-big">
+        <h2 class="heading-secondary">
+            <%=foundSaamaan.name%>
+        </h2>
+        <div class="u-center-text u-margin-top-huge">
+            <a href="/saamaan" class="btn btn--green">Back</a>
+        </div>
+    </div>
+
+    <div class="row">
+            <div class="col-1-of-2">
+            <div class="card">
+                <div class="card__side card__side--front">
+                        <div class="card__picture" style="background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(<%=foundSaamaan.img%>);">
+                                &nbsp;
+                        </div>
+                        <h4 class="card__heading">
+                            <span class="card__heading-span card__heading-span--1"><%=foundSaamaan.name%></span>
+                        </h4>
+                        <div class="card__details">
+                            <!-- there should be some sort of logic like this -->
+                            <%for(var i = 0; i < foundSaamaan.desc.length ; i ++) { %>
+                                <ul>
+                                    <li><%=foundSaamaan.desc[i]%></li>
+                                    <hr>
+                                </ul>
+                            <%}%>
+                        </div>
+                </div>
+                <div class="card__side card__side--back card__side--back-1">
+                        <div class="card__cta">
+                            <div class="card__price-box">
+                                <p class="card__price-only">Only</p>
+                                <p class="card__price-value">Rs<%=foundSaamaan.price%></p>
+                            </div>
+                            <a href="/saamaan/<%=foundSaamaan._id%>" class="btn btn--white">Buy Now</a>
+                            <a href="/saamaan" class="btn btn--white">Edit</a>
+                        </div>
+                    </div>
+            </div>
+            </div>
+    </div>
+</section>
+</body>
+</html>
