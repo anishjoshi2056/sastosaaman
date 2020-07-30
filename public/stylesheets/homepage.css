@@ -32,7 +32,7 @@ a.btn {
 	text-transform: uppercase;
 	font-weight: bold;
 	text-align: center;
-	background-color: #3f51b5;
+	background-color: #3498DB;
 	opacity: 1;
 }
 
@@ -95,7 +95,7 @@ header nav li {
 	height: 100%;
 	background-size: cover;
 	z-index: -1;
-	background-color: #80a3db;
+	background-color: #267FF9;
 }
 
 .hero h1 {
