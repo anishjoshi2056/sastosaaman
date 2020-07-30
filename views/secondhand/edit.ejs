@@ -1,0 +1,27 @@
+<%-include('../partials/header')%>
+	<link rel="stylesheet" href="/stylesheets/new.css">
+</head>
+<body>
+	<div class="container">  
+		<form id="contact" action="/saamaan/<%=saamaan._id%>?_method=PUT" method="POST">
+		  <h3>Edit <%=saamaan.name%></h3>
+		  <h4>The magic of Product</h4>
+		  <fieldset>
+			<input type="text" tabindex="1" required autofocus name="saamaan[name]" value="<%=saamaan.name%>">
+		  </fieldset>
+		  <fieldset>
+			<input  type="text" tabindex="2" required name="saamaan[img]" value="<%=saamaan.img%>">
+		  </fieldset>
+		  <fieldset>
+			<input  type="text" tabindex="3" required name="saamaan[desc]" value="<%=saamaan.desc%>">
+		  </fieldset>
+		  <fieldset>
+			<textarea placeholder="Edit Price of your Product" tabindex="4" required name="saamaan[price]" value="<%=saamaan.price%>"></textarea>
+		  </fieldset>
+		  <fieldset>
+			<button name="submit" type="submit" id="contact-submit" >Submit</button>
+		  </fieldset>
+        </form>
+	  </div>
+</body>
+</html>

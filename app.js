@@ -14,11 +14,16 @@ const seedDB = require('./seeds');
 var saamaanRoutes = require('./routes/saamaan-routes');
 //====================================================
 app.use(bodyParser.urlencoded({extended:true}));
+//Implementing method override throughout the app.js
+app.use(methodOverrirde("_method"));
+//set the view engine to ejs
 app.set('view engine','ejs');
+
 app.use(express.static(__dirname + "/public"));
 //====================================================
 //initializing mongodb
 mongoose.connect('mongodb://localhost:27017/secondhand',{useNewUrlParser:true,useUnifiedTopology:true});
+mongoose.set('useFindAndModify', false);
 //====================================================
 //Passport configuration
 app.use(require('express-session')({
