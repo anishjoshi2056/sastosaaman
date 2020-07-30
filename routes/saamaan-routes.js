@@ -53,6 +53,37 @@ router.get('/:id',function(req,res){
             res.render('secondhand/show',{foundSaamaan:foundSaamaan})
         }
     })
-    
 })
+// For edit information(get request)
+router.get('/:id/edit',function(req,res){
+   Saamaan.findById(req.params.id,function(err,saamaan){
+       if(err){
+           console.log(err);
+       }else{
+           res.render('secondhand/edit',{saamaan:saamaan})
+       }
+   })
+})
+// for edit information(put request)
+router.put('/:id',function(req,res){
+    Saamaan.findByIdAndUpdate(req.params.id,req.body.saamaan,function(err,UpdateSaamaan){
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect('/saamaan/' + req.params.id)
+        }
+    })
+})
+//for deleting product
+router.delete('/:id',function(req,res){
+   Saamaan.findByIdAndRemove(req.params.id,function(err,deletedSaamaan){
+       if(err){
+           console.log(err);
+       }else{
+           console.log("Deleted");
+           res.redirect('/saamaan');
+       }
+   })
+})
+
 module.exports = router;

@@ -45,7 +45,10 @@
                                 <p class="card__price-value">Rs<%=foundSaamaan.price%></p>
                             </div>
                             <a href="/saamaan/<%=foundSaamaan._id%>" class="btn btn--white">Buy Now</a>
-                            <a href="/saamaan" class="btn btn--white">Edit</a>
+                            <a href="/saamaan/<%=foundSaamaan._id%>/edit" class="btn btn--white">Edit</a>
+                            <form action="/saamaan/<%=foundSaamaan._id%>?_method=DELETE" method="POST">
+                                <button class="btn btn--white">Delete</button>
+                            </form>
                         </div>
                     </div>
             </div>
