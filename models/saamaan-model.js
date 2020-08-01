@@ -10,8 +10,15 @@ var saamaanSchema = new mongoose.Schema({
             type:mongoose.Schema.Types.ObjectId,
             ref:"User"
         },
-        username:String
-    }
+        username:String,
+        photo:String
+    },
+    comments:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Comment"
+        }
+    ]
 })
 //Converting schema into model which has a bunch of method
 module.exports = mongoose.model('saamaan',saamaanSchema);

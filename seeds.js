@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Saamaan = require('./models/saamaan-model');
+const Comment = require('./models/comment-model');
 var data = [{
         name:"Nepal",
         img:"https://wallpaperaccess.com/full/1410601.jpg",
@@ -33,6 +34,18 @@ function seedDB() {
                         console.log(err);
                     }else {
                         console.log("added a saamaan");
+                        Comment.create({
+                            text:"i love nepal"
+                        },function(err,comment){
+                            if(err){
+                                console.log(err);
+                            }else{
+                                //Pushing the comment into each created seed
+                                saamaan.comments.push(comment);
+                                saamaan.save();
+                                console.log('Created comment');
+                            }
+                        })
                     }
                 });
             });

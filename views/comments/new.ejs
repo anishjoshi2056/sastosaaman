@@ -1,0 +1,18 @@
+<%-include('../partials/header')%>
+	<link rel="stylesheet" href="/stylesheets/new.css">
+</head>
+<body>
+	<div class="container">  
+		<form id="contact" action="/saamaan/<%=foundSaamaanforcomment._id%>/comments" method="POST">
+		  <h3>Add New Comment</h3>
+		  <h4>The magic of Product</h4>
+		  <fieldset>
+			<textarea placeholder="Enter your comment" tabindex="4" required name="comment[text]"></textarea>
+		  </fieldset>
+		  <fieldset>
+			<button name="submit" type="submit" id="contact-submit" >Submit</button>
+		  </fieldset>
+		</form>
+	  </div>
+</body>
+</html>

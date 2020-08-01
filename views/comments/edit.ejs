@@ -1,0 +1,19 @@
+<%-include('../partials/header')%>
+	<link rel="stylesheet" href="/stylesheets/new.css">
+</head>
+<body>
+	<div class="container">  
+		<form id="contact" action="/saamaan/<%=SaamaanID%>/comments/<%=foundComment._id%>?_method=PUT" method="POST">
+		  <h3>Edit Comment</h3>
+		  <h4>The magic of Product</h4>
+		  <h2><%=foundComment._id%></h2>
+		  <fieldset>
+			<textarea tabindex="4" required name="comment[text]" ><%=foundComment.text%></textarea>
+		  </fieldset>
+		  <fieldset>
+			<button name="submit" type="submit" id="contact-submit" >Submit</button>
+		  </fieldset>
+		</form>
+	  </div>
+</body>
+</html>

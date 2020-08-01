@@ -29,7 +29,8 @@ passport.use(new GoogleStrategy({
             //user doesn't exist
             new User({
                 username:profile.displayName,
-                googleid:profile.id
+                googleid:profile.id,
+                photo:profile.photos[0].value
             }).save().then(function(newUser){
                 console.log('new user ' + newUser);
                 done(null,newUser);

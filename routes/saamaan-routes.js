@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Saamaan = require('../models/saamaan-model');
 const authCheck = require('../config/middlewareforoauth');
+const originalauthor = require('../config/originalauthor');
 
 //Routes for Saamaan page
 router.get('/',function(req,res){
@@ -19,13 +20,15 @@ router.get('/new',authCheck,function(req,res){
     res.render('secondhand/new');
 })
 router.post('/',authCheck,function(req,res){
+    console.log(req.user)
     var name = req.body.name;
     var img = req.body.img;
     var desc = req.body.desc;
     var price = req.body.price;
     var author = {
         id:req.user._id,
-        username:req.user.username
+        username:req.user.username,
+        photo:req.user.photo
     }
     var newSaamaan = {
         name:name,
@@ -46,7 +49,7 @@ router.post('/',authCheck,function(req,res){
 })
 // For more information
 router.get('/:id',function(req,res){
-    Saamaan.findById(req.params.id,function(err,foundSaamaan){
+    Saamaan.findById(req.params.id).populate('comments').exec(function(err,foundSaamaan){
         if(err){
             console.log(err);
         }else {
@@ -55,7 +58,7 @@ router.get('/:id',function(req,res){
     })
 })
 // For edit information(get request)
-router.get('/:id/edit',function(req,res){
+router.get('/:id/edit',originalauthor,function(req,res){
    Saamaan.findById(req.params.id,function(err,saamaan){
        if(err){
            console.log(err);
@@ -65,7 +68,7 @@ router.get('/:id/edit',function(req,res){
    })
 })
 // for edit information(put request)
-router.put('/:id',function(req,res){
+router.put('/:id',originalauthor,function(req,res){
     Saamaan.findByIdAndUpdate(req.params.id,req.body.saamaan,function(err,UpdateSaamaan){
         if(err){
             console.log(err);
@@ -75,7 +78,7 @@ router.put('/:id',function(req,res){
     })
 })
 //for deleting product
-router.delete('/:id',function(req,res){
+router.delete('/:id',originalauthor,function(req,res){
    Saamaan.findByIdAndRemove(req.params.id,function(err,deletedSaamaan){
        if(err){
            console.log(err);
