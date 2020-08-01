@@ -12,6 +12,7 @@ const seedDB = require('./seeds');
 //====================================================
 //Importing routes
 var saamaanRoutes = require('./routes/saamaan-routes');
+var commentRoutes = require('./routes/comment-routes');
 //====================================================
 app.use(bodyParser.urlencoded({extended:true}));
 //Implementing method override throughout the app.js
@@ -41,12 +42,13 @@ app.use(function(req,res,next){
 })
 //====================================================
 //using seedDB for default purpose
-seedDB();
+// seedDB();
 //====================================================
 //Routes
 //adding routes for the authetication
 app.use('/auth',authRoutes);
 app.use('/saamaan',saamaanRoutes);
+app.use('/saamaan/:id/comments',commentRoutes);
 //homepage route
 app.get('/',(req,res)=>{
     res.render('homepage')
